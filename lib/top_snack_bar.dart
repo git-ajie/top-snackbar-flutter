@@ -10,7 +10,7 @@ typedef ControllerCallback = void Function(AnimationController);
 enum DismissType { onTap, onSwipe, none }
 
 /// Represents possible vertical position of snackbar.
-enum SnackBarPosition { top, bottom }
+enum SnackBarPosition { top, bottom, left, right }
 
 OverlayEntry? _previousEntry;
 
@@ -186,6 +186,12 @@ class _TopSnackBarState extends State<_TopSnackBar> with SingleTickerProviderSta
         break;
       case SnackBarPosition.bottom:
         _offsetTween = Tween<Offset>(begin: const Offset(0, 1), end: Offset.zero);
+        break;
+      case SnackBarPosition.right:
+        _offsetTween = Tween<Offset>(begin: const Offset(1, 0), end: Offset.zero);
+        break;
+      case SnackBarPosition.left:
+        _offsetTween = Tween<Offset>(begin: const Offset(-1, 0), end: Offset.zero);
         break;
     }
 

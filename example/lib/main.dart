@@ -37,6 +37,9 @@ class MyAppState extends State<MyApp> {
                           message:
                               'There is some information. You need to do something with that',
                         ),
+                        snackBarPosition: SnackBarPosition.left,
+                        dismissType: DismissType.onSwipe,
+                        dismissDirection: [DismissDirection.endToStart]
                       );
                     },
                     child: buildButton(context, 'Show info'),
